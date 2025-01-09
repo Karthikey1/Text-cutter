@@ -78,3 +78,16 @@ import sys
 def split_text(max_length):
     text = sys.stdin.read()
      buffer = text
+
+
+def get_unique_filename(filename):
+    counter = 1
+    while os.path.exists(filename):
+        filename = filename.replace('.txt', f'_{counter}.txt')
+        counter += 1
+    return filename
+
+
+filename = get_unique_filename(f"part{part_number}.txt")
+with open(filename, "w") as file:
+    file.write(part)
