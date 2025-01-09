@@ -49,5 +49,13 @@ if __name__ == "__main__":
     if args.max_length <= 0:
         print("Invalid maximum length. Please enter a positive integer.")
         return
+      
+      import re
 
+def sanitize_filename(filename):
+    return re.sub(r'[\/:*?"<>|]', "_", filename)  
+
+
+with open(sanitize_filename(f"part{part_number}.txt"), "w") as file:
+    file.write(part)
     split_text(args.max_length)
