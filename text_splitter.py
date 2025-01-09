@@ -1,3 +1,5 @@
+import os
+
 def split_text(max_length):
     # Initialize buffer to accumulate input
     buffer = ""
@@ -60,3 +62,12 @@ def sanitize_filename(filename):
 with open(sanitize_filename(f"part{part_number}.txt"), "w") as file:
     file.write(part)
     split_text(args.max_length)
+
+    def split_text(max_length, output_dir='output'):
+    os.makedirs(output_dir, exist_ok=True)  # Create directory if it doesn't exist
+    buffer = ""
+    part_number = 1 
+    
+ 
+    with open(f"{output_dir}/part{part_number}.txt", "w") as file:
+        file.write(part)
