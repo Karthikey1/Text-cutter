@@ -1,4 +1,5 @@
 import os
+from tqdm import tqdm
 
 def split_text(max_length):
     # Initialize buffer to accumulate input
@@ -93,3 +94,7 @@ with open(filename, "w") as file:
     file.write(part)
 word_count = get_word_count(part)
 logging.info(f"Part {part_number} contains {word_count} words.")
+
+for part_number in tqdm(range(len(parts))):
+    with open(f"part{part_number}.txt", "w") as file:
+        file.write(parts[part_number])
