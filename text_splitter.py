@@ -71,3 +71,10 @@ with open(sanitize_filename(f"part{part_number}.txt"), "w") as file:
  
     with open(f"{output_dir}/part{part_number}.txt", "w") as file:
         file.write(part)
+
+      
+import sys
+
+def split_text(max_length):
+    text = sys.stdin.read()
+     buffer = text
