@@ -91,3 +91,5 @@ def get_unique_filename(filename):
 filename = get_unique_filename(f"part{part_number}.txt")
 with open(filename, "w") as file:
     file.write(part)
+word_count = get_word_count(part)
+logging.info(f"Part {part_number} contains {word_count} words.")
