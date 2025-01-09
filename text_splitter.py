@@ -98,3 +98,13 @@ logging.info(f"Part {part_number} contains {word_count} words.")
 for part_number in tqdm(range(len(parts))):
     with open(f"part{part_number}.txt", "w") as file:
         file.write(parts[part_number])
+
+        
+try:
+    while True:
+        line = input()
+        buffer += line + "\n"
+        ...
+except KeyboardInterrupt:
+    print("\nProcess interrupted. Exiting gracefully...")
+    exit(0)
