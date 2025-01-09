@@ -2,7 +2,8 @@ def split_text(max_length):
     # Initialize buffer to accumulate input
     buffer = ""
     part_number = 1  # Start numbering parts from 1
-    
+    import logging
+logging.basicConfig(level=logging.INFO)
     print("Enter your large text (press ENTER, and then CTRL+D (Linux) or CTRL+Z (Windows) to finish input):")
     
     try:
