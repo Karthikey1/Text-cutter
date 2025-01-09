@@ -42,3 +42,12 @@ def main():
 
 if __name__ == "__main__":
     main()
+  parser = argparse.ArgumentParser(description="Split text into parts.")
+    parser.add_argument("max_length", type=int, help="Maximum length of each part.")
+    args = parser.parse_args()
+
+    if args.max_length <= 0:
+        print("Invalid maximum length. Please enter a positive integer.")
+        return
+
+    split_text(args.max_length)
